@@ -18,13 +18,14 @@ fi
 echo "$L2_ENGINE_JWT" > /tmp/engine.jwt
 
 exec ./geth \
-  --datadir=/data \
+  --datadir=$GETH_DATA_DIR \
   --http \
   --http.corsdomain="*" \
   --http.vhosts="*" \
   --http.addr=0.0.0.0 \
   --http.port=8545 \
   --http.api=web3,debug,eth,net,engine \
+  --ipcpath="$GETH_DATA_DIR/geth.ipc" \
   --authrpc.addr=0.0.0.0 \
   --authrpc.port=8551 \
   --authrpc.vhosts="*" \
