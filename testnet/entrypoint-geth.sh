@@ -29,9 +29,9 @@ exec ./geth \
   --authrpc.addr=0.0.0.0 \
   --authrpc.port=8551 \
   --authrpc.vhosts="*" \
+  --nat=extip:$HOST_IP \
   --authrpc.jwtsecret=/tmp/engine.jwt \
   --syncmode=full \
   --gcmode=archive \
   --port=30303 \
-  --state.scheme=hash \
-  --rollup.disabletxpoolgossip=true
+  --state.scheme=hash 
